@@ -1,3 +1,5 @@
+package Biblioteca;
+
 public class Livro {
     private String titulo;
     private String autor;
@@ -14,6 +16,14 @@ public class Livro {
     public String getTitulo() {
         return titulo;
     }   
+
+    public int getIsbn() {
+        return isbn;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
 
     public void emprestar() {
         if (status) {

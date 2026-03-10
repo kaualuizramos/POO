@@ -1,3 +1,4 @@
+package Biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,10 @@ public class Usuario {
 
     public String getNome() {
         return nome;
+    }
+
+    public String getId() {
+        return String.valueOf(id);
     }
 
     public List<Livro> getLivros_emprestados() {
