@@ -19,4 +19,6 @@ public class ex3 {
         System.out.println("String com 'a' substituído por '*': " + input.reverse().toString().replaceAll("[aAeEiIoOuU]", "*"));
 
     }
+    scanner.close();
+
 }
