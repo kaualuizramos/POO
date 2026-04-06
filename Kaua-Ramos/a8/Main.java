@@ -1,43 +1,38 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         Produto[] produtos = new Produto[5];
-        int opcao;
+        int opcao = 0;
 
         do {
-            System.out.println("\n--- MENU ---");
-            System.out.println("1 - Cadastrar produto");
-            System.out.println("2 - Exibir produtos");
-            System.out.println("3 - Calcular média dos preços");
-            System.out.println("4 - Consultar produto por posição");
-            System.out.println("5 - Sair");
-            System.out.print("Escolha: ");
+            System.out.println("\n1-Cadastrar  2-Exibir  3-Média  4-Consultar  5-Sair");
+            System.out.print("Opção: ");
 
             try {
                 opcao = sc.nextInt();
 
                 switch (opcao) {
 
-                    case 1:
+                    case 1: // cadastrar
                         try {
-                            int posicao = -1;
-                            for (int i = 0; i < produtos.length; i++) {
+                            int pos = -1;
+                            for (int i = 0; i < 5; i++) {
                                 if (produtos[i] == null) {
-                                    posicao = i;
+                                    pos = i;
                                     break;
                                 }
                             }
 
-                            if (posicao == -1) {
+                            if (pos == -1) {
                                 System.out.println("Lista cheia!");
                                 break;
                             }
 
-                            sc.nextLine(); // limpar buffer
-
+                            sc.nextLine();
                             System.out.print("Nome: ");
                             String nome = sc.nextLine();
 
@@ -47,72 +42,72 @@ public class Main {
                             System.out.print("Código: ");
                             int codigo = sc.nextInt();
 
-                            produtos[posicao] = new Produto(nome, preco, codigo);
-                            System.out.println("Produto cadastrado com sucesso!");
+                            produtos[pos] = new Produto(nome, preco, codigo);
+                            System.out.println("Cadastrado!");
 
                         } catch (InputMismatchException e) {
-                            System.out.println("Erro: entrada inválida.");
+                            System.out.println("Entrada inválida!");
                             sc.nextLine();
                         } catch (IllegalArgumentException e) {
-                            System.out.println("Erro: " + e.getMessage());
+                            System.out.println(e.getMessage());
                         }
                         break;
 
-                    case 2:
-                        for (int i = 0; i < produtos.length; i++) {
+                    case 2: // exibir
+                        for (int i = 0; i < 5; i++) {
                             try {
-                                System.out.println("Posição " + i + ": " + produtos[i].toString());
+                                System.out.println(i + ": " + produtos[i].toString());
                             } catch (NullPointerException e) {
-                                System.out.println("Posição " + i + ": vazia");
+                                System.out.println(i + ": vazio");
                             }
                         }
                         break;
 
-                    case 3:
+                    case 3: // média
                         try {
                             double soma = 0;
-                            int count = 0;
+                            int cont = 0;
 
                             for (Produto p : produtos) {
                                 if (p != null) {
-                                    soma += p.getPreco();
-                                    count++;
+                                    soma += p.preco;
+                                    cont++;
                                 }
                             }
 
-                            double media = soma / count; // pode gerar ArithmeticException
-                            System.out.println("Média dos preços: R$ " + media);
+                            double media = soma / cont;
+                            System.out.println("Média: " + media);
 
                         } catch (ArithmeticException e) {
-                            System.out.println("Erro: nenhum produto cadastrado.");
+                            System.out.println("Nenhum produto cadastrado!");
                         }
                         break;
 
-                    case 4:
+                    case 4: // consultar
                         try {
-                            System.out.print("Digite a posição (0 a 4): ");
+                            System.out.print("Posição (0-4): ");
                             int pos = sc.nextInt();
 
-                            Produto p = produtos[pos]; // pode gerar ArrayIndexOutOfBoundsException
+                            Produto p = produtos[pos];
 
                             if (p == null) {
-                                throw new NullPointerException("Posição vazia.");
+                                throw new NullPointerException("Posição vazia!");
                             }
 
                             System.out.println(p);
 
                         } catch (ArrayIndexOutOfBoundsException e) {
-                            System.out.println("Erro: posição inválida.");
+                            System.out.println("Posição inválida!");
                         } catch (NullPointerException e) {
-                            System.out.println("Erro: " + e.getMessage());
+                            System.out.println(e.getMessage());
                         } catch (InputMismatchException e) {
-                            System.out.println("Erro: digite um número válido.");
+                            System.out.println("Digite número!");
                             sc.nextLine();
                         }
                         break;
 
                     case 5:
-                        System.out.println("Encerrando...");
+                        System.out.println("Fim.");
                         break;
 
                     default:
@@ -120,9 +115,8 @@ public class Main {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("Erro: digite um número inteiro.");
+                System.out.println("Digite um número!");
                 sc.nextLine();
-                opcao = 0;
             }
 
         } while (opcao != 5);
