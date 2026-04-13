@@ -1,0 +1,15 @@
+[2026-04-13 17:16:53] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:17:25] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:17:27] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:18:32] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:18:53] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:20:42] [ERRO] Erro ao criar tabela | excecao=SQLException: No suitable driver found for jdbc:sqlite:loja.db @ java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
+[2026-04-13 17:24:05] [SUCESSO] Tabela criada/verificada.
+[2026-04-13 17:24:12] [ERRO] Erro ao inserir produto | excecao=InputMismatchException: sem mensagem @ java.base/java.util.Scanner.throwFor(Scanner.java:939)
+[2026-04-13 17:24:25] [SUCESSO] Tabela criada/verificada.
+[2026-04-13 17:24:38] [SUCESSO] Produto inserido ID=1
+[2026-04-13 17:24:40] [SUCESSO] Listagem realizada
+[2026-04-13 17:24:46] [SUCESSO] Filtro estoque realizado
+[2026-04-13 17:24:50] [SUCESSO] Filtro estoque realizado
+[2026-04-13 17:24:56] [SUCESSO] Filtro estoque realizado
+[2026-04-13 17:25:03] [ERRO] Erro ao atualizar | excecao=InputMismatchException: sem mensagem @ java.base/java.util.Scanner.throwFor(Scanner.java:939)
