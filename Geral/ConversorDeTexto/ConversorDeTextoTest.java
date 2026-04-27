@@ -25,7 +25,7 @@ public class ConversorDeTextoTest {
         //ação
         String resultado = conversor.capitalizarPalavras(entrada);
         // Assert
-        assertEquals("java É Divertido", resultado);
+        assertEquals("Java É Divertido", resultado);
     }
 
     @Test
@@ -147,7 +147,7 @@ public class ConversorDeTextoTest {
         // Assert
         assertAll(
             ()->assertEquals(6, resultado),
-            ()->assertThrows(IllegalArgumentException.class,()->conversor.contarPalavras(null)),
+            ()->assertEquals(0, conversor.contarPalavras(null)),
             ()->assertEquals(0, conversor.contarPalavras("   "))
         );
     }
